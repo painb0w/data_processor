@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package players.api.v1;
+
+option go_package = "github.com/painb0w/data_processor/internal/pb/players_api";
+
+import "models/player_model.proto";
+import "models/player_stats.proto";
+import "google/api/annotations.proto";
+
+service PlayersService {
+    rpc GetPlayerInfoByName(GetPlayerInfoByNameRequest) returns (GetPlayerInfoByNameResponse) {
+        option (google.api.http) = {
+            post: "/playerInfo/get-by-name"
+            body: "*"
+        };
+    }
+
+    rpc GetPlayerStatsByID(GetPlayerStatsByIDRequest) returns (models.v1.PlayerStats) {
+        option (google.api.http) = {
+            get: "/playerStats/{id}"
+        };
+    };
+}
+
+message GetPlayerInfoByNameRequest {
+    string name = 1;
+}
+
+message GetPlayerInfoByNameResponse {
+    repeated models.v1.PlayerInfo playerInfos = 1; 
+}
+
+message GetPlayerStatsByIDRequest {
+    int32 id = 1;
+}
+
+message GetPlayerStatsByIDsResponse {
+    repeated models.v1.PlayerStats stats = 1; 
+}

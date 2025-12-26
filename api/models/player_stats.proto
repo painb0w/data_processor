@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+package models.v1;
+
+option go_package = "github.com/painb0w/data_processor/internal/pb/models";
+
+message PlayerStats {
+    int32 id = 1;
+    string name = 2;
+    string position = 3;
+    repeated bytes stats = 4;
+    int64 updated_at = 5; 
+}
+
+message AttackerStats {
+    int32 gamesplayed = 1;
+    int32 shots = 2;
+    int32 goals = 3;
+    int32 assists = 4;
+    int32 dribbles = 5;
+    int32 successdribbles = 6;
+    int32 foulsdrawn = 7;
+}
+
+message MidfielderStats {
+    int32 gamesplayed = 1;
+    int32 passes = 2;
+    int32 keypasses = 3;
+    int32 assists = 4;
+    int32 tackles = 5;
+    int32 dribbles = 6;
+}
+
+message DefenderStats {
+    int32 gamesplayed = 1;
+    int32 tackles = 2;
+    int32 interceptions = 3;
+    int32 blocks = 4;
+    int32 foulscommited = 5;
+    int32 duelswon = 6;
+    int32 duels = 7;
+    int32 yellowcards = 8;
+    int32 redcards = 9;
+}
+
+message GoalkeeperStats {
+    int32 gamesplayed = 1;
+    int32 conceded = 2;
+    int32 saves = 3;
+    int32 penalties = 4;
+    int32 penaltiessaved = 5;
+}

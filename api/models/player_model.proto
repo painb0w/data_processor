@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package models.v1;
+
+option go_package = "github.com/painb0w/data_processor/internal/pb/models";
+
+message PlayerInfo {
+    int32 id = 1;
+    string name = 2;
+    int32 age = 3;
+    string nationality = 4;
+    string height = 5;
+    string weight = 6;
+    string photo = 7;
+    string position = 8;
+}

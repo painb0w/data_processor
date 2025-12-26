@@ -1,0 +1,13 @@
+football-api:
+  api_key : "secret_key"
+  base_url : "football_api_base_url"
+  timeout : 10
+
+redis:
+  host: hostname
+  port: port
+  password: "password"
+  db: 0
+
+mongodb:
+  uri: "mongodb://user:password@mongodb:port"
